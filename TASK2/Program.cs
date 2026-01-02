@@ -38,7 +38,7 @@ System.Console.WriteLine("====================== All books =====================
 var cnt=library.DisplayBooks();
 foreach (var book in cnt)
 {
-    System.Console.WriteLine($"{book.Title} by {book.Author}");
+    System.Console.WriteLine($"{book.Id} {book.Title} by {book.Author}");
 }
 
 System.Console.WriteLine("====================== After Deleting ======================");
@@ -47,7 +47,7 @@ library.DeleteBook(book2);
 var cnt2=library.DisplayBooks();
 foreach (var book in cnt2)
 {
-    System.Console.WriteLine($"{book.Title} by {book.Author}");
+    System.Console.WriteLine($"{book.Id} {book.Title} by {book.Author}");
 }
 
 System.Console.WriteLine("====================== After Updating ======================");
@@ -56,21 +56,21 @@ book2.UpdateBook("1003Night","Grimm");
 var updated=library.DisplayBooks();
 foreach (var book in updated)
 {
-        System.Console.WriteLine($"{book.Title} by {book.Author}");
+        System.Console.WriteLine($"{book.Id} {book.Title} by {book.Author}");
 }
 
 System.Console.WriteLine("====================== By author ======================");
 var byAu=library.SearchByAuthor("Gog");
 foreach (var book in byAu)
 {
-         System.Console.WriteLine($"{book.Title} by {book.Author}");   
+         System.Console.WriteLine($"{book.Id} {book.Title} by {book.Author}");   
 }
 
 System.Console.WriteLine("====================== By title ======================");
 var byTi=library.SearchByTitle("Matem");
 foreach (var book in byTi)
 {
-         System.Console.WriteLine($"{book.Title} by {book.Author}");   
+         System.Console.WriteLine($"{book.Id} {book.Title} by {book.Author}");   
 }
 
 
@@ -78,5 +78,5 @@ System.Console.WriteLine("====================== Last Expierence ===============
 var all=library.DisplayBooks();
 foreach (var book in all)
 {
-    System.Console.WriteLine($"{book.Title} by {book.Author}");
+    System.Console.WriteLine($"{book.Id} {book.Title} by {book.Author}");
 }
