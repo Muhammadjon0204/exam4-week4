@@ -1,0 +1,78 @@
+
+// Question1
+Interface - eto pozhaluy odno iz luchshih consepsiy ( kotoroe ne yavlyaetsya kakimto pravilom , a deystvuet kak otdelniy mekhanizm dlya sozdaniya chistogo , krasivogo koda ). 
+Samo slovo Interface govorit chto eto kak vneshniy mekhanizm , logika kotoraya dolzhna osushestvitsya .
+Poetomu vnutri Interface mi sozdayom methodi bez tel , a znachit ih nado ispolzovat v dochernih classah , chtobi ne bilo oshibok.
+Pochemu Interface ispolzovat udobnee i priyatnee ???
+Otvet prost - radi togo chto mi mozhem obyadinit vse obshie methodi razlichnih classov i potom ispolzovat ih po naznacheniyu v sootvetstvii kazhdogo classa .
+Pochemu imenno tak ?? Da vsyo potomu chto odin class mozhet nasledovat tolko odin class , nooo odin class mozhet unasledovat mothodi neskolkih Interfacov , chto ochen udobno esli u nas budet neskolko Interfaceov kotorie nuzhni dochernemu classu.
+V Interface vse methodi pishutsya bez tel i oni publichnie po umolchaniyu , ih nelzya sozdat object , tak kak realizatsiya bivaet u ih dochernih classov.
+
+
+
+
+
+
+
+
+//Question2
+Static  class - i static methods ochen udobniye konsepsii v C# , tak kak oni pozvolyayut sozdavat methodi kotorie ochen udobno ispolzovat.
+U nih takzhe nelzya sozdat object , a method vnutri classa vizivaetsya cherez imya samogo classa ( ClassName.SomeMethod() ).
+V otlichii ot obichnih methodov i classov u static class est odna osobennost :
+1) Nelzya sozdat object classa
+2) U static elementov videlyaetsya tolko odna yacheyka pamyati dly vseh dannih\
+3) Ochen udobno esli sozdat konsepsiyu maatematicheskih algoritmov raznih operatsiy i utilitov
+ Takim obrazom static class ili methods v osnovnom ispolzuyut dlya maatematicheskih operatsiy , obichnih drugih methodov (kak bilo skazano utilitov) i rabotat s nimi ochen udobno v etom plane nezheli obichniy class
+
+
+
+
+
+
+
+
+ //Question3
+  Generics - ili zhe obobshennost , dayot ryad privilegiy esli mi hotim rabotat s neskolkimi ili zaranee ne opredelennimi tipami dannih.
+  oboznachaetsya kak <T> , stavitsya ryadom s imenem classa i vezde gde trebuetsya postavit tip dannih .
+  Kak uzhe skazali Generics dayot ryad privilegiy : 
+  1) vnutri classa osushestvlyaetsya methodi s modifikatorom <T> 
+  2) Posle etogo vo vremya sozdanita objecta i raboti s etimi methodami obyavlyaetsya sami eti tipi dannih .
+  3) privilegiya zakluchaetsya v tom chto mi mozhem postavit lyuboy tip kotorie zahotip , esli eto ne meshaet logicheskoy konsepsii koda i methoda.
+  Poetomu ispolzovanie Generics eto ochen horoshie vozmozhnosti rabotat s neskolkimi vidami dannih (obyazatelno esli sobludaetsya pravilnaya logicheskaya konsepsiya) , chto ochen horosho vliyaet na productivnost i podcherkivaet krasotu koda.
+
+
+
+
+
+
+
+
+//Question4
+Enum - ili enumiration , perevoditsya kak ischisleniye , ono sluzhit dlya togo chtobi bolee v legkoy forme hranit v sebe kakie libo dannie.
+Samiy prostoy primer : poisk s pomoshyu "string" osushestvlyaetsya dolgo i eto znachit minus po proizvoditelnosti.
+A poisk s pomoshyu chisel "int" ono delaetsya v razi bistree.
+Poetomu "enum" pozvolyayet hranit v sebe dannie s pomoshyu chisel ( ono ne perevodit dannie v chislo , a hranit samo soderzhimoe kak chislo v massive naprimer ).
+Eto pozvolyaet nam delat poisk kakih libo dannih ochen bistrim i po sushestvu delat nash kod gorazdoo krasivee.
+V enum ischislenie idet po poryadku vozrastaniya ( kakim bi mi ne stavili znachenie (tipa "int") v nomer enum elementa posleduyushie elementi i ih znacheniya budut na stupen vishe).
+Naprimer (samiy prostoy) : 
+
+enum Daytime{
+  Morning , // po umolchaniyu index u nego 0 
+  Afternun , // 1
+  Evening ,  // 2
+  Night      // 3
+}
+
+enum Daytime{
+  Morning = 3 , // mi mozhem postavit svoi znachenie , v nashem sluchae 3 
+  Afternun , // 4
+  Evening ,  // 5
+  Night      // 6
+}
+
+Vizivaetsya s pomoshyu imeni enum ( eto Daytime v nashem sluchae ) , posle stavitsya zapyataya i znachenie iz ischisleniya.
+
+var now = Daytime.Morning ; // samiy primitivniy vid 
+
+
+
